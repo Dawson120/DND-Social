@@ -4,6 +4,12 @@
 <main>
   <h1><%= character.name %></h1>
   <h1><%= character.level %></h1>
+  <% if (character.owner.equals(user?.profile._id)) { %> 
+  <form action="/characters/<%= character._id %>?_method=DELETE" method="POST">
+  <Button type="submit">KILL</Button>
+  </form>
+<a href="/characters/<%= character._id %>/edit"><button>Edit</button></a>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

@@ -36,6 +36,7 @@ function newCharacter(req, res) {
 }
 
 function create(req, res) {
+  req.body.owner = req.user.profile._id
   Character.create(req.body)
   .then(character => {
     res.redirect(`/characters/${character._id}`)
@@ -46,9 +47,43 @@ function create(req, res) {
   })
 }
 
+function edit(req, res) {
+  Character.findById(req.params.characterId)
+  .then (character => {
+    res.render('characters/edit', {
+      character,
+      title: character.name
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/characters/new')
+  })
+}
+
+function kill(req, res) {
+  Character.findById(req.params.characterId)
+  .then(character => {
+    if (character.owner.equals(req.user.profile._id)) {
+      character.deleteOne()
+      .then (() => {
+        res.redirect('/characters')
+      })
+    } else {
+      throw new error ('Shame On You')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newCharacter as new,
   create,
   show,
+  kill,
+  edit,
 }

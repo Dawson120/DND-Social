@@ -1,0 +1,15 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+
+  <form action="/characters" method="POST">
+    <input placeholder="<%= character.name %>" type="text" name="name" id="name-input">
+    <input placeholder="<%= character.level %>" type="number"  name="level" id="level-input">
+    <button type="submit">Create</button>
+  </form>
+
+
+</main>
+
+<%- include('../partials/footer') %>

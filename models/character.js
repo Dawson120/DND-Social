@@ -76,7 +76,7 @@ const characterSchema = new Schema({
   personality: String,
   appearance: String,
   Inventory: [{type: Schema.Types.ObjectId, ref: 'Item'}],
-  Player: { type: Schema.Types.ObjectId, ref: 'Profile'},
+  owner: { type: Schema.Types.ObjectId, ref: 'Profile'},
 })
 
 const Character = mongoose.model('Character', characterSchema)
