@@ -1,10 +1,11 @@
-import mongoose from 'mongoose'
+import mongoose, { SchemaTypes } from 'mongoose'
+
 
 const Schema = mongoose.Schema
 
 const characterSchema = new Schema({
   name: String,
-  level: Number,
+  level: {type: Number, default: 1},
   race: String,
   age: Number,
   height: Number,
@@ -74,6 +75,8 @@ const characterSchema = new Schema({
   passiveperception: Number,
   personality: String,
   appearance: String,
+  Inventory: [{type: Schema.Types.ObjectId, ref: 'Item'}],
+  Player: { type: Schema.Types.ObjectId, ref: 'Profile'},
 })
 
 const Character = mongoose.model('Character', characterSchema)
