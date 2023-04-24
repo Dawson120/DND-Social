@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const characterSchema = new schema ({
+const characterSchema = new Schema({
   name: String,
   level: Number,
   race: String,
