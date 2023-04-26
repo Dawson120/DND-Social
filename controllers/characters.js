@@ -1,5 +1,6 @@
 import { name } from "ejs";
 import { Character } from "../models/character.js";
+import { Item } from "../models/item.js"
 
 function index(req, res){
   Character.find({})
@@ -15,12 +16,28 @@ function index(req, res){
   })
 }
 
+function addItems(req, res) {
+  // console.log('deez')
+  Character.findById(req.params.characterId)
+  .then(character => {
+    res.render('items/new', {
+      character: character,
+      title: `${character.name}'s Inventory`
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/characters')
+  })
+}
+
 function show(req, res) {
   Character.findById(req.params.characterId)
+  .populate('inventory')
   .then(character => {
   res.render('characters/show', {
     character: character,
-    title: 'Hello world',
+    title: character.name,
     })
   })
   .catch(err => {
@@ -48,7 +65,7 @@ function create(req, res) {
 }
 
 function edit(req, res) {
-  console.log('help')
+  // console.log('help')
   Character.findById(req.params.characterId)
   .then (character => {
     res.render('characters/edit', {
@@ -60,6 +77,30 @@ function edit(req, res) {
     console.log(err)
     res.redirect('/characters')
   })
+}
+
+function inventory(req, res) {
+  Character.findById(req.params.characterId)
+  .populate('inventory')
+  .then (character => {
+    Item.find({_id: {$nin: character.inventory}})
+    .then (items => {
+    res.render('characters/inventory', {
+      character: character,
+      title: `${character.name}'s Inventory`,
+      items: items
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/characters')
+  })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/characters')
+  })
+  
 }
 
 function kill(req, res) {
@@ -137,4 +178,6 @@ export {
   update,
   newNote,
   deleteNote,
+  inventory,
+  addItems,
 }

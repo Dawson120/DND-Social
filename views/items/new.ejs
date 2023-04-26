@@ -1,0 +1,22 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<main>
+
+
+  <h1>
+    <%= character.name %>'s Inventory
+  </h1>
+
+  <% if (character.owner.equals(user?.profile._id)) { %> 
+  <form action="/items" method="POST">
+    <h2>Create and Add Item to Inventory</h2>
+    <label for="quantity-input">Quantity:</label>
+    <input id="quantity-input" type="number" name="quantity">
+    <button type="submit">Add Item</button>
+  </form>
+  <% } %>
+
+
+
+</main>
+<%- include('../partials/footer') %>

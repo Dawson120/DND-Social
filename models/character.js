@@ -82,7 +82,7 @@ const characterSchema = new Schema({
   personality: String,
   appearance: String,
   notes: [notesSchema],
-  Inventory: [{type: Schema.Types.ObjectId, ref: 'Item'}],
+  inventory: [{type: Schema.Types.ObjectId, ref: 'Item'}],
   owner: { type: Schema.Types.ObjectId, ref: 'Profile'},
 })
 

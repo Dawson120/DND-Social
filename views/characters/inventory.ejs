@@ -1,0 +1,24 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<main>
+
+
+  <h1>Inventory</h1>
+  <ul>
+    <% character.inventory.forEach(invItem => {%>
+      <li>
+        <%= invItem.quantity %>
+      </li>
+    <% }) %>
+  </ul>
+  <section>
+    <% if (character.owner.equals(user?.profile._id)) { %> 
+      <form action="/items/<%= character._id %>/new" method="POST">
+      <input type="number" name="quantity" placeholder="0">
+      <button type="submit">Add and Create Item</button>
+    </form>
+    <% }  %>
+  </section>
+
+</main>
+<%- include('../partials/footer') %>

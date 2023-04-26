@@ -6,11 +6,15 @@
   <h1>All Characters</h1>
     <table>
       <tbody>
+
         <% characters.forEach((character) => {%>
-
-          <td><a href="/characters/<%= character._id %>"><%= character.name %></a></td>
-
+          <td>
+            <a href="/characters/<%= character._id %>">
+              <%= character.name %>
+            </a>
+          </td>
         <% }) %>
+        
       </tbody>
     </table>
 
