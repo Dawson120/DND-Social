@@ -3,22 +3,40 @@
 <main>
 
 
-  <h1>Inventory</h1>
-  <ul>
-    <% character.inventory.forEach(invItem => {%>
-      <li>
-        <%= invItem.quantity %>
-      </li>
-    <% }) %>
-  </ul>
+  <h1> <%= character.name %>'s Inventory</h1>
   <section>
     <% if (character.owner.equals(user?.profile._id)) { %> 
       <form action="/items/<%= character._id %>/new" method="POST">
-      <input type="number" name="quantity" placeholder="0">
-      <button type="submit">Add and Create Item</button>
-    </form>
+        <input id="quantity-input" type="number" name="quantity" placeholder="Quantity">
+        <input id="itemname-input" type="text" name="itemname" placeholder="Item Name">
+        <input id="desc-input" type="text" name="desc" placeholder="Item Description">
+        <button type="submit">Add and Create Item</button>
+      </form>
     <% }  %>
-  </section>
+      <section>
+          <table>
+            <thead>Items</thead>
+              <tbody>
+              <% character.inventory.forEach(invItem => {%>
+              <tr>
+                <td>
+                Qt: <strong><%= invItem.quantity %></strong> 
+                Name: <strong><%= invItem.itemname %></strong> 
+                Description: <strong><%= invItem.desc %></strong>
 
+                <% if (character.owner.equals(user?.profile._id)) { %> 
+                  <form action="/items/<%= character._id %>/inventory/<%= item._id %>?_method=DELETE" method="POST">
+                  <button type="submit">X</button>
+                </form>
+                <% }  %>
+
+                </td>
+              </tr>
+                <% }) %>
+            </tbody>
+        </table>
+      </section>
+    </section>
+    
 </main>
 <%- include('../partials/footer') %>

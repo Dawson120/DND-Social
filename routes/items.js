@@ -5,6 +5,8 @@ import { isLoggedIn } from "../middleware/middleware.js";
 const router = Router()
 
 // router.post('/', isLoggedIn, itemsCtrl.createItem)
-router.post('/:characterId/new', itemsCtrl.createItem)
+router.post('/:characterId/new', isLoggedIn,itemsCtrl.createItem)
+
+router.post('/:characterId/inventory/:itemId', isLoggedIn,itemsCtrl.removeItem)
 
 export { router }

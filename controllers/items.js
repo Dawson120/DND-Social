@@ -33,8 +33,34 @@ Character.findById(req.params.characterId)
     })
 }
 
+function removeItem(req, res) {
+  Character.findById(req.params.characterId)
+  .then(character => {
+  Item.create(req.body)
+    .then(item => {
+      character.inventory.push(item._id)
+      character.save()
+        .then(() => {
+      res.redirect(`/characters/${req.params.characterId}/inventory`)
+        })
+        .catch(err => {
+          console.log(err)
+          res.redirect('/items/new')
+        })
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/items/new')
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/items/new')
+    })
+}
 
 export {
   createItem,
   newItem,
+  removeItem,
 }
