@@ -3,7 +3,9 @@
 <main>
 
 
-  <h1> <%= character.name %>'s Inventory</h1>
+  <h1><a href="/characters/<%= character._id %>">
+    <%= character.name %>
+  </a>'s Inventory</h1>
   <section>
     <% if (character.owner.equals(user?.profile._id)) { %> 
       <form action="/items/<%= character._id %>/new" method="POST">
@@ -17,22 +19,23 @@
           <table>
             <thead>Items</thead>
               <tbody>
-              <% character.inventory.forEach(invItem => {%>
-              <tr>
-                <td>
-                Qt: <strong><%= invItem.quantity %></strong> 
-                Name: <strong><%= invItem.itemname %></strong> 
-                Description: <strong><%= invItem.desc %></strong>
-
-                <% if (character.owner.equals(user?.profile._id)) { %> 
-                  <form action="/items/<%= character._id %>/inventory/<%= item._id %>?_method=DELETE" method="POST">
-                  <button type="submit">X</button>
-                </form>
-                <% }  %>
-
-                </td>
-              </tr>
+                <% character.inventory.forEach(invItem => {%>
+                  <tr>
+                    <td>
+                      Qt: <strong><%= invItem.quantity %></strong> 
+                      Name: <strong><%= invItem.itemname %></strong> 
+                      Description: <strong><%= invItem.desc %></strong>
+                
+                      <% if (character.owner.equals(user?.profile._id)) { %> 
+                        <form action="/items/<%= character._id %>/inventory/<%= invItem._id %>?_method=DELETE" method="POST">
+                          <button type="submit">X</button>
+                        </form>
+                      <% }  %>
+                
+                    </td>
+                  </tr>
                 <% }) %>
+                
             </tbody>
         </table>
       </section>

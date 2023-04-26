@@ -6,7 +6,6 @@ function newItem(req, res) {
 }
 
 function createItem(req, res) {
-  console.log('burh')
 req.body.owner = req.user.profile._id
 Character.findById(req.params.characterId)
   .then(character => {
@@ -35,23 +34,19 @@ Character.findById(req.params.characterId)
 
 function removeItem(req, res) {
   Character.findById(req.params.characterId)
-  .then(character => {
-  Item.create(req.body)
-    .then(item => {
-      character.inventory.push(item._id)
+    .then(character => {
+      const itemIndex = character.inventory.indexOf(req.params.itemId)
+      if (itemIndex > -1) {
+        character.inventory.splice(itemIndex, 1)
+      }
       character.save()
         .then(() => {
-      res.redirect(`/characters/${req.params.characterId}/inventory`)
+          res.redirect(`/characters/${req.params.characterId}/inventory`)
         })
         .catch(err => {
           console.log(err)
           res.redirect('/items/new')
         })
-      })
-      .catch(err => {
-        console.log(err)
-        res.redirect('/items/new')
-      })
     })
     .catch(err => {
       console.log(err)
