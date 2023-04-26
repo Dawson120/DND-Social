@@ -3,6 +3,12 @@ import mongoose, { SchemaTypes } from 'mongoose'
 
 const Schema = mongoose.Schema
 
+const notesSchema = new Schema({
+  note: String,
+  owner: { type: Schema.Types.ObjectId, ref: 'Profile'},
+})
+
+
 const characterSchema = new Schema({
   name: String,
   level: {type: Number, default: 1},
@@ -75,6 +81,7 @@ const characterSchema = new Schema({
   passiveperception: Number,
   personality: String,
   appearance: String,
+  notes: [notesSchema],
   Inventory: [{type: Schema.Types.ObjectId, ref: 'Item'}],
   owner: { type: Schema.Types.ObjectId, ref: 'Profile'},
 })
