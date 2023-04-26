@@ -10,6 +10,9 @@ router.get('/new', characterCtrl.new)
 router.get('/:characterId', characterCtrl.show)
 router.post('/', isLoggedIn,characterCtrl.create)
 router.delete('/:characterId', isLoggedIn, characterCtrl.kill)
+router.put('/:characterId', isLoggedIn, characterCtrl.update)
+router.post('/:characterId/notes', isLoggedIn, characterCtrl.newNote)
+router.delete('/:characterId/notes/:notesId', isLoggedIn, characterCtrl.deleteNote)
 
 export {
   router

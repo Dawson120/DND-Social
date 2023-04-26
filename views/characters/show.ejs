@@ -4,12 +4,33 @@
 <main>
   <h1><%= character.name %></h1>
   <h1><%= character.level %></h1>
+  <h1>DM Notes</h1>
+  <ul>
+    <% character.notes.forEach(notes => {%>
+      <li>
+        <%= notes.note %>
+        <% if (character.owner.equals(user?.profile._id)) { %> 
+          <form action="/characters/<%= character._id %>/notes/<%= notes._id %>?_method=DELETE" method="POST">
+          <button type="submit">X</button>
+        </form>
+        <% }  %>
+      </li>
+    <% }) %>
+  </ul>
+  <% if (character.owner.equals(user?.profile._id)) { %> 
+    <form action="/characters/<%= character._id %>/notes" method="POST">
+    <input type="text" name="note" placeholder="DM Notes Here">
+    <button type="submit">Add Note</button>
+  </form>
+  <% }  %>
+  <section>
   <% if (character.owner.equals(user?.profile._id)) { %> 
   <form action="/characters/<%= character._id %>?_method=DELETE" method="POST">
   <Button type="submit">KILL</Button>
   </form>
-<a href="/characters/<%= character._id %>/edit"><button>Edit</button></a>
+  <a href="/characters/<%= character._id %>/edit"><button>Edit</button></a>
   <% } %>
+</section>
 </main>
 
 <%- include('../partials/footer') %>
