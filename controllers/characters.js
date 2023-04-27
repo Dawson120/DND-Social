@@ -16,20 +16,20 @@ function index(req, res){
   })
 }
 
-function addItems(req, res) {
-  // console.log('deez')
-  Character.findById(req.params.characterId)
-  .then(character => {
-    res.render('items/new', {
-      character: character,
-      title: `${character.name}'s Inventory`
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/characters')
-  })
-}
+// function addItems(req, res) {
+//   // console.log('deez')
+//   Character.findById(req.params.characterId)
+//   .then(character => {
+//     res.render('items/new', {
+//       character: character,
+//       title: `${character.name}'s Inventory`
+//     })
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/characters')
+//   })
+// }
 
 function show(req, res) {
   Character.findById(req.params.characterId)
@@ -179,5 +179,4 @@ export {
   newNote,
   deleteNote,
   inventory,
-  addItems,
 }

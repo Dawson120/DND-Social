@@ -1,0 +1,78 @@
+html {
+  box-sizing: border-box;
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after {
+  /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default but can be overridden as needed */
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  /* display: flex; */
+  overflow: auto;
+  min-height: 100vh;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #1a1a1a;
+  color: #f6f6f6;
+  /* Use a system font, if none are available use any found sans-sarif font */
+  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+  'Helvetica Neue', sans-serif;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+nav {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: var(--dl-radius-radius-radius8);
+  justify-content: flex-start;
+  background-color: transparent;
+  background-image: linear-gradient(0deg, rgb(100, 0, 0) 0.00%,rgb(0, 0, 0) 100.00%);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 15;
+  border-bottom-right-radius: 15;
+}
+
+.navbutton {
+  color: var(--dl-color-gray-black);
+  padding: 10px;
+  font-size: 32px;
+  box-shadow: 5px 5px 10px 0px #000000;
+  font-style: italic;
+  font-family: Open Sans;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-left: 15px;
+  border-color: var(--dl-color-gray-black);
+  border-width: 5px;
+  border-radius: var(--dl-radius-radius-radius8);
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+
+.right {
+  margin-left: auto;
+}

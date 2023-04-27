@@ -20,8 +20,6 @@ router.delete('/:characterId', isLoggedIn, characterCtrl.kill)
 
 router.put('/:characterId', isLoggedIn, characterCtrl.update)
 
-router.post('/:characterId/items', characterCtrl.addItems)
-
 router.post('/:chracterId/inventory')
 
 router.post('/:characterId/notes', isLoggedIn, characterCtrl.newNote)
