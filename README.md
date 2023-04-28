@@ -1,12 +1,19 @@
 # DND Social
 
 ![dnd social](public/dndsocial.png)
+![dnd social 2](public/dndsocial2.png)
 
-I always found the idea of seeing other people's DND characters very interesting. Especially if you happen to listen to a DND podcast and want to follow along. DND Social pokes at that possibility.
+Are you a Dungeons and Dragons enthusiast who loves listening to DND podcasts and following the adventures of other players? Do you find the idea of peeking into other people's DND characters intriguing? If so, you're in luck! DND Social is the perfect platform for you to explore and discover other players' characters.
+
+With DND Social, you can immerse yourself in the world of DND characters, connect with other players, and gain inspiration for your own characters. Our platform is incredibly simple and easy to use, and all you need is a Google account to get started.
+
+The possibilities are endless with DND Social. You can explore a vast array of characters, from wizards and sorcerers to warriors and rogues. You can also discover new character concepts, see how other players build their characters, and even find inspiration for your next campaign.
+
+
 
 ## Description
 
-DND Social is an incrediably simple social platform that allows you to view other people's DND character sheets.
+Login, Create a Character, Browse!!!
 
 ## Getting Started
 

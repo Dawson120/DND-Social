@@ -77,7 +77,7 @@
   <section class="armor-speed-init">
     <div class="armor">
       <span class="armor-body">Armor:
-        <span><input value="<%= character.armorClass %>" type="number" name="armorclass"></span>
+        <span><input value="<%= character.armorclass %>" type="number" name="armorclass"></span>
       </span>    
     </div>
     <div class="speed">
@@ -169,9 +169,29 @@
   </section>
 </section>
 
+<section class="appearance-info">
+  <section class="appearance-body">
+    <div class="appearance-content">
+      <span id="Personality">
+        Personality:
+      </span>
+      <textarea name="personality" id="appearance-input" cols="30" rows="10"><%= character.personality %>
+      </textarea>
+    </div>
+    <div class="appearance-content">
+      <span id="Appearance">
+        Appearance:
+      </span>
+      <textarea name="appearance" id="personality-input" cols="30" rows="10"> <%= character.appearance %>
+      </textarea>
+    </div>
+  </section>
+</section>
+
 
 
 </div>
+
 </section>
 
   <button type="submit">Update</button>
