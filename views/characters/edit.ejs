@@ -3,7 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <form action="/characters" method="POST">
+  <form action="/characters/<%= character._id %>?_method=PUT" method="POST">
     
 <section class="character-sheet">
 
@@ -77,7 +77,7 @@
   <section class="armor-speed-init">
     <div class="armor">
       <span class="armor-body">Armor:
-        <span><input value="<%= character.armorClass %>" type="number" name="armorClass"></span>
+        <span><input value="<%= character.armorClass %>" type="number" name="armorclass"></span>
       </span>    
     </div>
     <div class="speed">
@@ -89,85 +89,80 @@
         </span>
     </div>
 
-
     
   <section class="skillchecks">
   
   <label for="skillAcrobatics-input">Acrobatics:</label>
   <input value="<%= character.skillAcrobatics %>" type="text" name="skillAcrobatics" id="skillAcrobatics-input">
-  <input value="<%= character.skillcheckAcrobatics %>" type="checkbox" name="skillcheckAcrobatics" id="skillcheckAcrobatics-input">
+
 
   <label for="skillAnimalHandling-input">Animal Handling:</label>
   <input value="<%= character.skillAnimalHandling %>" type="text" name="skillAnimalHandling" id="skillAnimalHandling-input">
-  <input value="<%= character.skillcheckAnimalHandling %>" type="checkbox" name="skillcheckAnimalHandling" id="skillcheckAnimalHandling-input">
+
 
   <label for="skillArcana-input">Arcana:</label>
   <input value="<%= character.skillArcana %>" type="text" name="skillArcana" id="skillArcana-input">
-  <input value="<%= character.skillcheckArcana %>" type="checkbox" name="skillcheckArcana" id="skillcheckArcana-input">
+
 
   <label for="skillAthletics-input">Athletics:</label>
   <input value="<%= character.skillAthletics %>" type="text" name="skillAthletics" id="skillAthletics-input">
-  <input value="<%= character.skillcheckAthletics %>" type="checkbox" name="skillcheckAthletics" id="skillcheckAthletics-input">
+
 
   <label for="skillDeception-input">Deception:</label>
   <input value="<%= character.skillDeception %>" type="text" name="skillDeception" id="skillDeception-input">
-  <input value="<%= character.skillcheckDeception %>" type="checkbox" name="skillcheckDeception" id="skillcheckDeception-input">
+
 
   <label for="skillHistory-input">History:</label>
   <input value="<%= character.skillHistory %>" type="text" name="skillHistory" id="skillHistory-input">
-  <input value="<%= character.skillcheckHistory %>" type="checkbox" name="skillcheckHistory" id="skillcheckHistory-input">
+
 
   <label for="skillInsight-input">Insight:</label>
   <input value="<%= character.skillInsight %>" type="text" name="skillInsight" id="skillInsight-input">
-  <input value="<%= character.skillcheckInsight %>" type="checkbox" name="skillcheckInsight" id="skillcheckInsight-input">
+
 
   <label for="skillIntimidation-input">Intimidation:</label>
   <input value="<%= character.skillIntimidation %>" type="text" name="skillIntimidation" id="skillIntimidation-input">
-  <input value="<%= character.skillcheckIntimidation %>" type="checkbox" name="skillcheckIntimidation" id="skillcheckIntimidation-input">
 
-  <label for="skillInvestigation-input">Investigation:</label>
-  <input value="<%= character.skillInvestigation %>" type="text" name="skillInvestigation" id="skillInvestigation-input">
-  <input value="<%= character.skillcheckInvestigation %>" type="checkbox" name="skillcheckInvestigation" id="skillcheckInvestigation-input">
 
 <label for="skillInvestigation-input">Investigation:</label>
 <input value="<%= character.skillInvestigation %>" type="text" name="skillInvestigation" id="skillInvestigation-input">
-<input value="<%= character.skillcheckInvestigation %>" type="checkbox" name="skillcheckInvestigation" id="skillcheckInvestigation-input">
+
 
 <label for="skillMedicine-input">Medicine:</label>
 <input value="<%= character.skillMedicine %>" type="text" name="skillMedicine" id="skillMedicine-input">
-<input value="<%= character.skillcheckMedicine %>" type="checkbox" name="skillcheckMedicine" id="skillcheckMedicine-input">
+
 
 <label for="skillNature-input">Nature:</label>
 <input value="<%= character.skillNature %>" type="text" name="skillNature" id="skillNature-input">
-<input value="<%= character.skillcheckNature %>" type="checkbox" name="skillcheckNature" id="skillcheckNature-input">
+
 
 <label for="skillPerception-input">Perception:</label>
 <input value="<%= character.skillPerception %>" type="text" name="skillPerception" id="skillPerception-input">
-<input value="<%= character.skillcheckPerception %>" type="checkbox" name="skillcheckPerception" id="skillcheckPerception-input">
+
 
 <label for="skillPerformance-input">Performance:</label>
 <input value="<%= character.skillPerformance %>" type="text" name="skillPerformance" id="skillPerformance-input">
-<input value="<%= character.skillcheckPerformance %>" type="checkbox" name="skillcheckPerformance" id="skillcheckPerformance-input">
+
 
 <label for="skillPersuasion-input">Persuasion:</label>
 <input value="<%= character.skillPersuasion %>" type="text" name="skillPersuasion" id="skillPersuasion-input">
-<input value="<%= character.skillcheckPersuasion %>" type="checkbox" name="skillcheckPersuasion" id="skillcheckPersuasion-input">
+
 
 <label for="skillReligion-input">Religion:</label>
 <input value="<%= character.skillReligion %>" type="text" name="skillReligion" id="skillReligion-input">
-<input value="<%= character.skillcheckReligion %>" type="checkbox" name="skillcheckReligion" id="skillcheckReligion-input">
+
 
 <label for="skillSlightofHand-input">Sleight of Hand:</label>
 <input value="<%= character.skillSlightofHand %>" type="text" name="skillSlightofHand" id="skillSlightofHand-input">
-<input value="<%= character.skillcheckSlightofHand %>" type="checkbox" name="skillcheckSlightofHand" id="skillcheckSlightofHand-input">
+
 
 <label for="skillStealth-input">Stealth:</label>
 <input value="<%= character.skillStealth %>" type="text" name="skillStealth" id="skillStealth-input">
-<input value="<%= character.skillcheckStealth %>" type="checkbox" name="skillcheckStealth" id="skillcheckStealth-input">
+
 
 <label for="skillSurvival-input">Survival:</label>
 <input value="<%= character.skillSurvival %>" type="text" name="skillSurvival" id="skillSurvival-input">
-<input value="<%= character.skillcheckSurvival %>" type="checkbox" name="skillcheckSurvival">
+
 
 
     </section>

@@ -54,6 +54,9 @@ function newCharacter(req, res) {
 
 function create(req, res) {
   req.body.owner = req.user.profile._id
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+  }
   Character.create(req.body)
   .then(character => {
     res.redirect(`/characters/${character._id}`)
@@ -128,7 +131,7 @@ function update(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/characters')
+    res.redirect('/')
   })
 }
 function newNote(req, res) {
