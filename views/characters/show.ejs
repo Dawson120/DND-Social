@@ -157,10 +157,9 @@
     <ul>
       <% character.notes.forEach(notes => {%>
         <li>
-          <%= notes.note %>
+          <%= notes.note %><%= notes.created %>
           <% if (character.owner.equals(user?.profile._id)) { %> 
-            <form action="/characters/<%= character._id %>/notes/<%= notes._id %>?_method=DELETE" method="POST">
-              <button type="submit">X</button>
+            <form action="/characters/<%= character._id %>/notes/<%= notes._id %>?_method=DELETE" method="POST"><button type="submit">X</button>
             </form>
           <% }  %>
         </li>
@@ -171,7 +170,7 @@
       <section>
         <% if (character.owner.equals(user?.profile._id)) { %> 
           <form action="/characters/<%= character._id %>/notes" method="POST">
-            <input type="text" name="note" placeholder="DM Notes Here">
+            <input type="text" name="notes" placeholder="DM Notes Here">
             <button type="submit">Add Note</button>
           </form>
           <% }  %>

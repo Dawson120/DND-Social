@@ -1,0 +1,22 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+td {
+  font-size: xx-large;
+  padding: 10px;
+  font-family: Open Sans;
+  color: black;
+  border: solid 2px black;
+  background-color: white;
+  margin: 10px;
+  font-weight: 800;
+}
+
+.characterbutton :hover {
+  background-color: black;
+  color: white;
+}

@@ -5,6 +5,12 @@ const Schema = mongoose.Schema
 
 const notesSchema = new Schema({
   note: String,
+  created: {
+    type: Number,
+    default: function() {
+      return new Date().getDate()
+    }
+  },
   owner: { type: Schema.Types.ObjectId, ref: 'Profile'},
 })
 
