@@ -25,10 +25,12 @@ Login, Create a Character, Browse!!!
 ### 🖥 [TRELLO](https://dnd-social.fly.dev/) 🖥
 
 
-### How To Play
+### How To Use
 
 * Click Here [LINK](https://dnd-social.fly.dev/)
 * Sign In Using Google
+* Click Add Character to Create New Character
+
 
 ## Technologies Used
 

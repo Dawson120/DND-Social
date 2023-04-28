@@ -42,7 +42,7 @@ main {
   height: auto;
   display: flex;
   flex-wrap: wrap;
-  align-self: flex-start;
+  align-self: center;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -169,7 +169,6 @@ button {
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  justify-content: space-evenly;
 }
 
 .combat-info {
