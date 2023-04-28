@@ -1,46 +1,193 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="../stylesheets/characters/show.css">
 <%- include('../partials/nav') %>
-
 <main>
-  <h1><%= character.name %></h1>
-  <h1><%= character.level %></h1>
-  <h1>DM Notes</h1>
+<section class="character-sheet">
 
-<section>
+    <section class="general-info">
+
+      <h1 id="name">
+        <%= character.name %>
+      </h1>
+      <section class="info-container">
+        <div >
+          <span class="info">
+            <span id="info">
+              Level: <%= character.level %>
+            </span>
+          </span>
+        </div>
+        <div >
+          <span class="info">
+            <span id="info">
+              Race: <%= character.race%>
+            </span>
+          </span>
+        </div>
+        <div >
+          <span class="info">
+            <span id="info">
+              Age: <%= character.age %>
+            </span>
+          </span>
+        </div>
+        <div >
+          <span class="info">
+            <span id="info">
+              H: <%= character.height %>
+            </span>
+          </span>
+        </div>
+        <div >
+            <span class="info">
+              <span id="info">
+                W: <%= character.weight %>
+              </span>
+            </span>
+          
+        </div>
+        
+
+
+
+    </section>
+  </section>
+
+
+<div class="bottom-sheet">
+  <section class="skills-info">
+    <h1 class="info">Skills</h1>
+    <div class="skills-container">
+      <span class="skill-name">Strength</span>
+      <span class="skill-input"><%= character.str %></span>
+      <span id="strMod-input" class="skill-mod"><%= character.strMod %></span>
+    </div>
+    <div class="skills-container">
+      <span class="skill-name">Dexterity</span>
+      <span class="skill-input"><%= character.dex %></span>
+      <span id="dexMod-input" class="skill-mod"><%= character.dexMod %></span>
+    </div>
+    <div class="skills-container">
+      <span class="skill-name">Constitution</span>
+      <span class="skill-input"><%= character.con %></span>
+      <span id="strMod-input" class="skill-mod"><%= character.conMod %></span>
+    </div>
+    <div class="skills-container">
+      <span class="skill-name">Intelligence</span>
+      <span class="skill-input"><%= character.intel %></span>
+      <span id="intelMod-input" class="skill-mod"><%= character.intelMod %></span>
+    </div>
+    <div class="skills-container">
+      <span class="skill-name">Wisdom</span>
+      <span class="skill-input"><%= character.wis %></span>
+      <span id="wisMod-input" class="skill-mod"><%= character.wisMod %></span>
+    </div>
+    <div class="skills-container">
+      <span class="skill-name">Charisma</span>
+      <span class="skill-input"><%= character.char %></span>
+      <span id="char-input" class="skill-mod"><%= character.charMod %></span>
+    </div>
+
+
+
+
+  </section>
+
+
+
+
+  
+<section class="combat-info">
+
+  
+  <section class="armor-speed-init">
+    <div class="armor">
+      <span class="armor-body">Armor:
+        <span><%= character.armorClass %></span>
+      </span>    
+    </div>
+    <div class="speed">
+      <span class="speed-body">Speed: <span><%= character.speed %></span>
+      </span>
+    </div>
+    <div class="initiative">
+        <span class="initiative-body">Initiative: <span><%= character.initiative %></span>
+        </span>
+    </div>
+  </section>
+
   <ul>
-    <% character.notes.forEach(notes => {%>
-      <li>
-        <%= notes.note %>
-        <% if (character.owner.equals(user?.profile._id)) { %> 
-          <form action="/characters/<%= character._id %>/notes/<%= notes._id %>?_method=DELETE" method="POST">
-          <button type="submit">X</button>
-        </form>
-        <% }  %>
-      </li>
-    <% }) %>
+    <li><strong>Acrobatics:</strong> <%= character.skillAcrobatics %> (<%= character.skillcheckAcrobatics %>)</li>
+    <li><strong>Animal Handling:</strong> <%= character.skillAnimalHandling %> (<%= character.skillcheckAnimalHandling %>)</li>
+    <li><strong>Arcana:</strong> <%= character.skillArcana %> (<%= character.skillcheckArcana %>)</li>
+    <li><strong>Athletics:</strong> <%= character.skillAthletics %> (<%= character.skillcheckAthletics %>)</li>
+    <li><strong>Deception:</strong> <%= character.skillDeception %> (<%= character.skillcheckDeception %>)</li>
+    <li><strong>History:</strong> <%= character.skillHistory %> (<%= character.skillcheckHistory %>)</li>
+    <li><strong>Insight:</strong> <%= character.skillInsight %> (<%= character.skillcheckInsight %>)</li>
+    <li><strong>Intimidation:</strong> <%= character.skillIntimidation %> (<%= character.skillcheckIntimidation %>)</li>
+    <li><strong>Investigation:</strong> <%= character.skillInvestigation %> (<%= character.skillcheckInvestigation %>)</li>
+    <li><strong>Medicine:</strong> <%= character.skillMedicine %> (<%= character.skillcheckMedicine %>)</li>
+    <li><strong>Nature:</strong> <%= character.skillNature %> (<%= character.skillcheckNature %>)</li>
+    <li><strong>Perception:</strong> <%= character.skillPerception %> (<%= character.skillcheckPerception %>)</li>
+    <li><strong>Performance:</strong> <%= character.skillPerformance %> (<%= character.skillcheckPerformance %>)</li>
+    <li><strong>Persuasion:</strong> <%= character.skillPersuasion %> (<%= character.skillcheckPersuasion %>)</li>
+    <li><strong>Religion:</strong> <%= character.skillReligion %> (<%= character.skillcheckReligion %>)</li>
+    <li><strong>Slight of Hand:</strong> <%= character.skillSlightofHand %> (<%= character.skillcheckSlightofHand %>)</li>
+    <li><strong>Stealth:</strong> <%= character.skillStealth %> (<%= character.skillcheckStealth %>)</li>
+    <li><strong>Survival:</strong> <%= character.skillSurvival %> (<%= character.skillcheckSurvival %>)</li>
   </ul>
+  
+
+
 </section>
 
-<section>
-  <% if (character.owner.equals(user?.profile._id)) { %> 
-    <form action="/characters/<%= character._id %>/notes" method="POST">
-    <input type="text" name="note" placeholder="DM Notes Here">
-    <button type="submit">Add Note</button>
-  </form>
-  <% }  %>
+
+
+
+</div>
+
 </section>
+  
 
-<section>
-  <% if (character.owner.equals(user?.profile._id)) { %> 
-  <form action="/characters/<%= character._id %>?_method=DELETE" method="POST">
-  <button type="submit">KILL</button>
-  </form>
-  <a href="/characters/<%= character._id %>/edit"><button>Edit</button></a>
-  <% } %>
-</section>
 
-<a href="/characters/<%= character._id %>/inventory"><button>Inventory</button></a>
 
+
+  <h1>DM Notes</h1>
+  <section>
+    <ul>
+      <% character.notes.forEach(notes => {%>
+        <li>
+          <%= notes.note %>
+          <% if (character.owner.equals(user?.profile._id)) { %> 
+            <form action="/characters/<%= character._id %>/notes/<%= notes._id %>?_method=DELETE" method="POST">
+              <button type="submit">X</button>
+            </form>
+          <% }  %>
+        </li>
+      <% }) %>
+    </ul>
+  </section>
+      
+      <section>
+        <% if (character.owner.equals(user?.profile._id)) { %> 
+          <form action="/characters/<%= character._id %>/notes" method="POST">
+            <input type="text" name="note" placeholder="DM Notes Here">
+            <button type="submit">Add Note</button>
+          </form>
+          <% }  %>
+        </section>
+        
+        <section>
+          <% if (character.owner.equals(user?.profile._id)) { %> 
+            <form action="/characters/<%= character._id %>?_method=DELETE" method="POST">
+              <button type="submit">KILL</button>
+            </form>
+            <a href="/characters/<%= character._id %>/edit"><button>Edit</button></a>
+            <% } %>
+          </section>
+          
+          <a href="/characters/<%= character._id %>/inventory"><button>Inventory</button></a>
+          
 </main>
-
-<%- include('../partials/footer') %>
+          
+          <%- include('../partials/footer') %>

@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  display: flex;
 }
 
 /* The Universal Selector */
@@ -12,13 +13,13 @@ html {
 }
 
 body {
+  gap: 5;
   width: 100%;
-  /* display: flex; */
+  display: flex;
   overflow: auto;
   min-height: 100vh;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
-  justify-content: flex-start;
   background-color: #1a1a1a;
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
@@ -27,12 +28,6 @@ body {
   margin: 0;
 }
 
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 nav {
   flex: 0 0 auto;
   width: 100%;
@@ -51,6 +46,11 @@ nav {
   border-top-right-radius: 0;
   border-bottom-left-radius: 15;
   border-bottom-right-radius: 15;
+}
+
+nav :hover{
+  background-color: black;
+  color: white;
 }
 
 .navbutton {

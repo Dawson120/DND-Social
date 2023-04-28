@@ -9,11 +9,16 @@
   justify-content: center;
 }
 
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 .welcome-body {
   width: 1002px;
-  font-size: 4em;
-  font-style: italic;
+  font-size: auto;
   text-align: center;
   font-family: Open Sans;
   font-weight: 800;
@@ -22,11 +27,15 @@
 
 .welcome-body2 {
   width: 813px;
-  font-size: 3em;
-  font-style: italic;
+  font-size: auto;
   text-align: center;
   font-family: Open Sans;
   font-weight: 700;
   margin-top: 5px;
 }
 
+.welcome-text {
+  font-size: 4em;
+  font-family: Open Sans;
+  font-style: italic;
+}
