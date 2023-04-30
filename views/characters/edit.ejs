@@ -1,204 +1,393 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/characters/edit.css">
+<link rel="stylesheet" href="/stylesheets/characters/edit.css" />
 <%- include('../partials/nav') %>
 
 <main>
   <form action="/characters/<%= character._id %>?_method=PUT" method="POST">
-    
-<section class="character-sheet">
+    <section class="character-sheet">
+      <section class="general-info">
+        <input
+          value="<%= character.name %>"
+          type="text"
+          name="name"
+          id="name-input"
+        />
 
-<!-- name n junk below -->
-  <section class="general-info">
+        <div class="info-container">
+          Level:
+          <input
+            value="<%= character.level %>"
+            type="number"
+            name="level"
+            id="level-input"
+            class="input"
+          />
 
-      <input value="<%= character.name %>" type="text" name="name" id="name-input">
-      
-    <div class="info-container">
-      Level: <input value="<%= character.level %>" type="number"  name="level" id="level-input" class="input">
+          Race:
+          <input
+            value="<%= character.race %>"
+            type="text"
+            name="race"
+            id="race-input"
+            class="input"
+          />
 
-      Race: <input value="<%= character.race %>" type="text"  name="race" id="race-input" class="input">
+          Age:
+          <input
+            value="<%= character.age %>"
+            type="number"
+            name="age"
+            id="age-input"
+            class="input"
+          />
 
-      Age: <input value="<%= character.age %>" type="number"  name="age" id="age-input" class="input">
+          Height:
+          <input
+            value="<%= character.height %>"
+            type="string"
+            name="height"
+            id="height-input"
+            class="input"
+          />
 
-      Height: <input value="<%= character.height %>" type="string"  name="height" id="height-input" class="input">
+          Weight:<input
+            value="<%= character.weight %>"
+            type="number"
+            name="weight"
+            id="weight-input"
+            class="input"
+          />LBs
+        </div>
+      </section>
 
-      Weight:<input value="<%= character.weight %>" type="number"  name="weight" id="weight-input" class="input">LBs
-    </div>
-  </section>
-<!-- name n junk above -->
-<div class="bottom-sheet">
-<!-- skills n junk -->
-  <section class="skills-info">
+      <div class="bottom-sheet">
+        <section class="skills-info">
+          <div class="skills-container">
+            <h1 class="skill-name">Strength</h1>
+            <input
+              value="<%= character.str %>"
+              type="number"
+              name="str"
+              id="str-input"
+              class="skill-input"
+            />
+            <input
+              value="<%= character.strMod %>"
+              type="number"
+              name="strMod"
+              id="str-input"
+              class="skill-mod"
+            />
+          </div>
 
-    <div class="skills-container">
-      <h1 class="skill-name">Strength</h1>
-      <input value="<%= character.str %>" type="number"  name="str" id="str-input" class="skill-input">
-      <input value="<%= character.strMod %>" type="number"  name="strMod" id="str-input" class="skill-mod">
-    </div>
+          <div class="skills-container">
+            <h1 class="skill-name">Dexterity</h1>
+            <input
+              value="<%= character.dex %>"
+              type="number"
+              name="dex"
+              id="dex-input"
+              class="skill-input"
+            />
+            <input
+              value="<%= character.dexMod %>"
+              type="number"
+              name="dexMod"
+              id="dexMod-input"
+              class="skill-mod"
+            />
+          </div>
 
-    <div class="skills-container">
-      <h1 class="skill-name">Dexterity</h1>
-      <input value="<%= character.dex %>" type="number"  name="dex" id="dex-input" class="skill-input">
-      <input value="<%= character.dexMod %>" type="number"  name="dexMod" id="dexMod-input" class="skill-mod">
-    </div>
-    
-    <div class="skills-container">
-      <h1 class="skill-name">Constitution</h1>
-      <input value="<%= character.con %>" type="number"  name="con" id="con-input" class="skill-input">
-      <input value="<%= character.conMod %>" type="number"  name="conMod" id="conMod-input" class="skill-mod">
-    </div>
-    
-    <div class="skills-container">
-      <h1 class="skill-name">Intelligence</h1>
-      <input value="<%= character.intel %>" type="number"  name="intel" id="intel-input" class="skill-input">
-      <input value="<%= character.intelMod %>" type="number"  name="intelMod" id="intelMod-input" class="skill-mod">
-    </div>
-    
-    <div class="skills-container">
-      <h1 class="skill-name">Wisdom</h1>
-      <input value="<%= character.wis %>" type="number"  name="wis" id="wis-input" class="skill-input">
-      <input value="<%= character.wisMod %>" type="number"  name="wisMod" id="wisMod-input" class="skill-mod">
-    </div>
-    
-    <div class="skills-container">
-      <h1 class="skill-name">Charisma</h1>
-      <input value="<%= character.char %>" type="number"  name="char" id="str-input" class="skill-input">
-      <input value="<%= character.charMod %>" type="number"  name="charMod" id="charMod-input" class="skill-mod">
-    </div>
-    
+          <div class="skills-container">
+            <h1 class="skill-name">Constitution</h1>
+            <input
+              value="<%= character.con %>"
+              type="number"
+              name="con"
+              id="con-input"
+              class="skill-input"
+            />
+            <input
+              value="<%= character.conMod %>"
+              type="number"
+              name="conMod"
+              id="conMod-input"
+              class="skill-mod"
+            />
+          </div>
 
+          <div class="skills-container">
+            <h1 class="skill-name">Intelligence</h1>
+            <input
+              value="<%= character.intel %>"
+              type="number"
+              name="intel"
+              id="intel-input"
+              class="skill-input"
+            />
+            <input
+              value="<%= character.intelMod %>"
+              type="number"
+              name="intelMod"
+              id="intelMod-input"
+              class="skill-mod"
+            />
+          </div>
 
+          <div class="skills-container">
+            <h1 class="skill-name">Wisdom</h1>
+            <input
+              value="<%= character.wis %>"
+              type="number"
+              name="wis"
+              id="wis-input"
+              class="skill-input"
+            />
+            <input
+              value="<%= character.wisMod %>"
+              type="number"
+              name="wisMod"
+              id="wisMod-input"
+              class="skill-mod"
+            />
+          </div>
 
-  </section>
-<!-- skills n junk -->
+          <div class="skills-container">
+            <h1 class="skill-name">Charisma</h1>
+            <input
+              value="<%= character.char %>"
+              type="number"
+              name="char"
+              id="str-input"
+              class="skill-input"
+            />
+            <input
+              value="<%= character.charMod %>"
+              type="number"
+              name="charMod"
+              id="charMod-input"
+              class="skill-mod"
+            />
+          </div>
+        </section>
 
-<section class="combat-info">
+        <section class="combat-info">
+          <section class="armor-speed-init">
+            <div class="armor">
+              <span class="armor-body"
+                >Armor:
+                <span
+                  ><input
+                    value="<%= character.armorclass %>"
+                    type="number"
+                    name="armorclass"
+                /></span>
+              </span>
+            </div>
+            <div class="speed">
+              <span class="speed-body"
+                >Speed:
+                <span
+                  ><input
+                    value="<%= character.speed %>"
+                    type="number"
+                    name="speed"
+                /></span>
+              </span>
+            </div>
+            <div class="initiative">
+              <span class="initiative-body"
+                >Initiative:
+                <span
+                  ><input
+                    value="<%= character.initiative %>"
+                    type="number"
+                    name="initiative"
+                /></span>
+              </span>
+            </div>
 
-  
-  <section class="armor-speed-init">
-    <div class="armor">
-      <span class="armor-body">Armor:
-        <span><input value="<%= character.armorclass %>" type="number" name="armorclass"></span>
-      </span>    
-    </div>
-    <div class="speed">
-      <span class="speed-body">Speed: <span><input value="<%= character.speed %>" type="number" name="speed"></span>
-      </span>
-    </div>
-    <div class="initiative">
-        <span class="initiative-body">Initiative: <span><input value="<%= character.initiative %>" type="number" name="initiative"></span>
-        </span>
-    </div>
+            <section class="skillchecks">
+              <label for="skillAcrobatics-input">Acrobatics:</label>
+              <input
+                value="<%= character.skillAcrobatics %>"
+                type="text"
+                name="skillAcrobatics"
+                id="skillAcrobatics-input"
+              />
 
-    
-  <section class="skillchecks">
-  
-  <label for="skillAcrobatics-input">Acrobatics:</label>
-  <input value="<%= character.skillAcrobatics %>" type="text" name="skillAcrobatics" id="skillAcrobatics-input">
+              <label for="skillAnimalHandling-input">Animal Handling:</label>
+              <input
+                value="<%= character.skillAnimalHandling %>"
+                type="text"
+                name="skillAnimalHandling"
+                id="skillAnimalHandling-input"
+              />
 
+              <label for="skillArcana-input">Arcana:</label>
+              <input
+                value="<%= character.skillArcana %>"
+                type="text"
+                name="skillArcana"
+                id="skillArcana-input"
+              />
 
-  <label for="skillAnimalHandling-input">Animal Handling:</label>
-  <input value="<%= character.skillAnimalHandling %>" type="text" name="skillAnimalHandling" id="skillAnimalHandling-input">
+              <label for="skillAthletics-input">Athletics:</label>
+              <input
+                value="<%= character.skillAthletics %>"
+                type="text"
+                name="skillAthletics"
+                id="skillAthletics-input"
+              />
 
+              <label for="skillDeception-input">Deception:</label>
+              <input
+                value="<%= character.skillDeception %>"
+                type="text"
+                name="skillDeception"
+                id="skillDeception-input"
+              />
 
-  <label for="skillArcana-input">Arcana:</label>
-  <input value="<%= character.skillArcana %>" type="text" name="skillArcana" id="skillArcana-input">
+              <label for="skillHistory-input">History:</label>
+              <input
+                value="<%= character.skillHistory %>"
+                type="text"
+                name="skillHistory"
+                id="skillHistory-input"
+              />
 
+              <label for="skillInsight-input">Insight:</label>
+              <input
+                value="<%= character.skillInsight %>"
+                type="text"
+                name="skillInsight"
+                id="skillInsight-input"
+              />
 
-  <label for="skillAthletics-input">Athletics:</label>
-  <input value="<%= character.skillAthletics %>" type="text" name="skillAthletics" id="skillAthletics-input">
+              <label for="skillIntimidation-input">Intimidation:</label>
+              <input
+                value="<%= character.skillIntimidation %>"
+                type="text"
+                name="skillIntimidation"
+                id="skillIntimidation-input"
+              />
 
+              <label for="skillInvestigation-input">Investigation:</label>
+              <input
+                value="<%= character.skillInvestigation %>"
+                type="text"
+                name="skillInvestigation"
+                id="skillInvestigation-input"
+              />
 
-  <label for="skillDeception-input">Deception:</label>
-  <input value="<%= character.skillDeception %>" type="text" name="skillDeception" id="skillDeception-input">
+              <label for="skillMedicine-input">Medicine:</label>
+              <input
+                value="<%= character.skillMedicine %>"
+                type="text"
+                name="skillMedicine"
+                id="skillMedicine-input"
+              />
 
+              <label for="skillNature-input">Nature:</label>
+              <input
+                value="<%= character.skillNature %>"
+                type="text"
+                name="skillNature"
+                id="skillNature-input"
+              />
 
-  <label for="skillHistory-input">History:</label>
-  <input value="<%= character.skillHistory %>" type="text" name="skillHistory" id="skillHistory-input">
+              <label for="skillPerception-input">Perception:</label>
+              <input
+                value="<%= character.skillPerception %>"
+                type="text"
+                name="skillPerception"
+                id="skillPerception-input"
+              />
 
+              <label for="skillPerformance-input">Performance:</label>
+              <input
+                value="<%= character.skillPerformance %>"
+                type="text"
+                name="skillPerformance"
+                id="skillPerformance-input"
+              />
 
-  <label for="skillInsight-input">Insight:</label>
-  <input value="<%= character.skillInsight %>" type="text" name="skillInsight" id="skillInsight-input">
+              <label for="skillPersuasion-input">Persuasion:</label>
+              <input
+                value="<%= character.skillPersuasion %>"
+                type="text"
+                name="skillPersuasion"
+                id="skillPersuasion-input"
+              />
 
+              <label for="skillReligion-input">Religion:</label>
+              <input
+                value="<%= character.skillReligion %>"
+                type="text"
+                name="skillReligion"
+                id="skillReligion-input"
+              />
 
-  <label for="skillIntimidation-input">Intimidation:</label>
-  <input value="<%= character.skillIntimidation %>" type="text" name="skillIntimidation" id="skillIntimidation-input">
+              <label for="skillSlightofHand-input">Sleight of Hand:</label>
+              <input
+                value="<%= character.skillSlightofHand %>"
+                type="text"
+                name="skillSlightofHand"
+                id="skillSlightofHand-input"
+              />
 
+              <label for="skillStealth-input">Stealth:</label>
+              <input
+                value="<%= character.skillStealth %>"
+                type="text"
+                name="skillStealth"
+                id="skillStealth-input"
+              />
 
-<label for="skillInvestigation-input">Investigation:</label>
-<input value="<%= character.skillInvestigation %>" type="text" name="skillInvestigation" id="skillInvestigation-input">
+              <label for="skillSurvival-input">Survival:</label>
+              <input
+                value="<%= character.skillSurvival %>"
+                type="text"
+                name="skillSurvival"
+                id="skillSurvival-input"
+              />
+            </section>
+          </section>
+        </section>
 
-
-<label for="skillMedicine-input">Medicine:</label>
-<input value="<%= character.skillMedicine %>" type="text" name="skillMedicine" id="skillMedicine-input">
-
-
-<label for="skillNature-input">Nature:</label>
-<input value="<%= character.skillNature %>" type="text" name="skillNature" id="skillNature-input">
-
-
-<label for="skillPerception-input">Perception:</label>
-<input value="<%= character.skillPerception %>" type="text" name="skillPerception" id="skillPerception-input">
-
-
-<label for="skillPerformance-input">Performance:</label>
-<input value="<%= character.skillPerformance %>" type="text" name="skillPerformance" id="skillPerformance-input">
-
-
-<label for="skillPersuasion-input">Persuasion:</label>
-<input value="<%= character.skillPersuasion %>" type="text" name="skillPersuasion" id="skillPersuasion-input">
-
-
-<label for="skillReligion-input">Religion:</label>
-<input value="<%= character.skillReligion %>" type="text" name="skillReligion" id="skillReligion-input">
-
-
-<label for="skillSlightofHand-input">Sleight of Hand:</label>
-<input value="<%= character.skillSlightofHand %>" type="text" name="skillSlightofHand" id="skillSlightofHand-input">
-
-
-<label for="skillStealth-input">Stealth:</label>
-<input value="<%= character.skillStealth %>" type="text" name="skillStealth" id="skillStealth-input">
-
-
-<label for="skillSurvival-input">Survival:</label>
-<input value="<%= character.skillSurvival %>" type="text" name="skillSurvival" id="skillSurvival-input">
-
-
-
+        <section class="appearance-info">
+          <section class="appearance-body">
+            <div class="appearance-content">
+              <span id="Personality"> Personality: </span>
+              <textarea
+                name="personality"
+                id="appearance-input"
+                cols="30"
+                rows="10"
+              >
+<%= character.personality %>
+      </textarea
+              >
+            </div>
+            <div class="appearance-content">
+              <span id="Appearance"> Appearance: </span>
+              <textarea
+                name="appearance"
+                id="personality-input"
+                cols="30"
+                rows="10"
+              >
+<%= character.appearance %>
+      </textarea
+              >
+            </div>
+          </section>
+        </section>
+      </div>
     </section>
-  </section>
-</section>
 
-<section class="appearance-info">
-  <section class="appearance-body">
-    <div class="appearance-content">
-      <span id="Personality">
-        Personality:
-      </span>
-      <textarea name="personality" id="appearance-input" cols="30" rows="10"><%= character.personality %>
-      </textarea>
-    </div>
-    <div class="appearance-content">
-      <span id="Appearance">
-        Appearance:
-      </span>
-      <textarea name="appearance" id="personality-input" cols="30" rows="10"> <%= character.appearance %>
-      </textarea>
-    </div>
-  </section>
-</section>
-
-
-
-</div>
-
-</section>
-
-  <button type="submit">Update</button>
-</form>
-
-
-
+    <button type="submit">Update</button>
+  </form>
 </main>
 
 <%- include('../partials/footer') %>

@@ -16,21 +16,6 @@ function index(req, res){
   })
 }
 
-// function addItems(req, res) {
-//   // console.log('deez')
-//   Character.findById(req.params.characterId)
-//   .then(character => {
-//     res.render('items/new', {
-//       character: character,
-//       title: `${character.name}'s Inventory`
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/characters')
-//   })
-// }
-
 function show(req, res) {
   Character.findById(req.params.characterId)
   .populate('inventory')
@@ -68,7 +53,6 @@ function create(req, res) {
 }
 
 function edit(req, res) {
-  // console.log('help')
   Character.findById(req.params.characterId)
   .then (character => {
     res.render('characters/edit', {
@@ -106,7 +90,7 @@ function inventory(req, res) {
   
 }
 
-function kill(req, res) {
+function removeCharacter(req, res) {
   Character.findById(req.params.characterId)
   .then(character => {
     if (character.owner.equals(req.user.profile._id)) {
@@ -176,7 +160,7 @@ export {
   newCharacter as new,
   create,
   show,
-  kill,
+  removeCharacter,
   edit,
   update,
   newNote,

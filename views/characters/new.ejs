@@ -1,196 +1,381 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="../stylesheets/characters/new.css">
+<link rel="stylesheet" href="../stylesheets/characters/new.css" />
 <%- include('../partials/nav') %>
 <main>
   <form action="/characters" method="POST">
-    
-<section class="character-sheet">
+    <section class="character-sheet">
+      <!-- name n junk below -->
+      <section class="general-info">
+        <input
+          placeholder="Name Here"
+          type="text"
+          name="name"
+          id="name-input"
+        />
 
-<!-- name n junk below -->
-  <section class="general-info">
+        <div class="info-container">
+          <input
+            placeholder="Level"
+            type="number"
+            name="level"
+            id="level-input"
+            class="input"
+          />
 
-      <input placeholder="Name Here" type="text" name="name" id="name-input">
-      
-    <div class="info-container">
-      <input placeholder="Level" type="number"  name="level" id="level-input" class="input">
+          <input
+            placeholder="Race"
+            type="text"
+            name="race"
+            id="race-input"
+            class="input"
+          />
 
-      <input placeholder="Race" type="text"  name="race" id="race-input" class="input">
+          <input
+            placeholder="Age"
+            type="number"
+            name="age"
+            id="age-input"
+            class="input"
+          />
 
-      <input placeholder="Age" type="number"  name="age" id="age-input" class="input">
+          <input
+            placeholder="Height"
+            type="string"
+            name="height"
+            id="height-input"
+            class="input"
+          />
 
-      <input placeholder="Height" type="string"  name="height" id="height-input" class="input">
+          <input
+            placeholder="Weight"
+            type="number"
+            name="weight"
+            id="weight-input"
+            class="input"
+          />
+        </div>
+      </section>
+      <!-- name n junk above -->
+      <div class="bottom-sheet">
+        <!-- skills n junk -->
+        <section class="skills-info">
+          <div class="skills-container">
+            <h1 class="skill-name">Strength</h1>
+            <input
+              placeholder="0"
+              type="number"
+              name="str"
+              id="str-input"
+              class="skill-input"
+            />
+            <input
+              placeholder="0"
+              type="number"
+              name="strMod"
+              id="str-input"
+              class="skill-mod"
+            />
+          </div>
 
-      <input placeholder="Weight" type="number"  name="weight" id="weight-input" class="input">
-    </div>
-  </section>
-<!-- name n junk above -->
-<div class="bottom-sheet">
-<!-- skills n junk -->
-  <section class="skills-info">
+          <div class="skills-container">
+            <h1 class="skill-name">Dexterity</h1>
+            <input
+              placeholder="0"
+              type="number"
+              name="dex"
+              id="dex-input"
+              class="skill-input"
+            />
+            <input
+              placeholder="0"
+              type="number"
+              name="dexMod"
+              id="dexMod-input"
+              class="skill-mod"
+            />
+          </div>
 
-    <div class="skills-container">
-      <h1 class="skill-name">Strength</h1>
-      <input placeholder="0" type="number"  name="str" id="str-input" class="skill-input">
-      <input placeholder="0" type="number"  name="strMod" id="str-input" class="skill-mod">
-    </div>
+          <div class="skills-container">
+            <h1 class="skill-name">Constitution</h1>
+            <input
+              placeholder="0"
+              type="number"
+              name="con"
+              id="con-input"
+              class="skill-input"
+            />
+            <input
+              placeholder="0"
+              type="number"
+              name="conMod"
+              id="conMod-input"
+              class="skill-mod"
+            />
+          </div>
 
-    <div class="skills-container">
-      <h1 class="skill-name">Dexterity</h1>
-      <input placeholder="0" type="number"  name="dex" id="dex-input" class="skill-input">
-      <input placeholder="0" type="number"  name="dexMod" id="dexMod-input" class="skill-mod">
-    </div>
+          <div class="skills-container">
+            <h1 class="skill-name">Intelligence</h1>
+            <input
+              placeholder="0"
+              type="number"
+              name="intel"
+              id="intel-input"
+              class="skill-input"
+            />
+            <input
+              placeholder="0"
+              type="number"
+              name="intelMod"
+              id="intelMod-input"
+              class="skill-mod"
+            />
+          </div>
 
-    <div class="skills-container">
-      <h1 class="skill-name">Constitution</h1>
-      <input placeholder="0" type="number"  name="con" id="con-input" class="skill-input">
-      <input placeholder="0" type="number"  name="conMod" id="conMod-input" class="skill-mod">
-    </div>
+          <div class="skills-container">
+            <h1 class="skill-name">Wisdom</h1>
+            <input
+              placeholder="0"
+              type="number"
+              name="wis"
+              id="wis-input"
+              class="skill-input"
+            />
+            <input
+              placeholder="0"
+              type="number"
+              name="wisMod"
+              id="wisMod-input"
+              class="skill-mod"
+            />
+          </div>
 
-    <div class="skills-container">
-      <h1 class="skill-name">Intelligence</h1>
-      <input placeholder="0" type="number"  name="intel" id="intel-input" class="skill-input">
-      <input placeholder="0" type="number"  name="intelMod" id="intelMod-input" class="skill-mod">
-    </div>
+          <div class="skills-container">
+            <h1 class="skill-name">Charisma</h1>
+            <input
+              placeholder="0"
+              type="number"
+              name="char"
+              id="str-input"
+              class="skill-input"
+            />
+            <input
+              placeholder="0"
+              type="number"
+              name="charMod"
+              id="charMod-input"
+              class="skill-mod"
+            />
+          </div>
+        </section>
+        <!-- skills n junk -->
 
-    <div class="skills-container">
-      <h1 class="skill-name">Wisdom</h1>
-      <input placeholder="0" type="number"  name="wis" id="wis-input" class="skill-input">
-      <input placeholder="0" type="number"  name="wisMod" id="wisMod-input" class="skill-mod">
-    </div>
+        <section class="combat-info">
+          <section class="armor-speed-init">
+            <div class="armor">
+              <span class="armor-body"
+                >Armor:
+                <span
+                  ><input placeholder="0" type="number" name="armorcclass"
+                /></span>
+              </span>
+            </div>
+            <div class="speed">
+              <span class="speed-body"
+                >Speed:
+                <span
+                  ><input placeholder="0" type="number" name="speed"
+                /></span>
+              </span>
+            </div>
+            <div class="initiative">
+              <span class="initiative-body"
+                >Initiative:
+                <span
+                  ><input placeholder="0" type="number" name="initiative"
+                /></span>
+              </span>
+            </div>
+          </section>
 
-    <div class="skills-container">
-      <h1 class="skill-name">Charisma</h1>
-      <input placeholder="0" type="number"  name="char" id="str-input" class="skill-input">
-      <input placeholder="0" type="number"  name="charMod" id="charMod-input" class="skill-mod">
-    </div>
+          <section class="skillchecks">
+            <label for="skillAcrobatics-input">Acrobatics:</label>
+            <input
+              placeholder="Acrobatics"
+              type="text"
+              name="skillAcrobatics"
+              id="skillAcrobatics-input"
+            />
 
+            <label for="skillAnimalHandling-input">Animal Handling:</label>
+            <input
+              placeholder="Animal Handling"
+              type="text"
+              name="skillAnimalHandling"
+              id="skillAnimalHandling-input"
+            />
 
+            <label for="skillArcana-input">Arcana:</label>
+            <input
+              placeholder="Arcana"
+              type="text"
+              name="skillArcana"
+              id="skillArcana-input"
+            />
 
-  </section>
-<!-- skills n junk -->
+            <label for="skillAthletics-input">Athletics:</label>
+            <input
+              placeholder="Athletics"
+              type="text"
+              name="skillAthletics"
+              id="skillAthletics-input"
+            />
 
-<section class="combat-info">
+            <label for="skillDeception-input">Deception:</label>
+            <input
+              placeholder="Deception"
+              type="text"
+              name="skillDeception"
+              id="skillDeception-input"
+            />
 
-  
-  <section class="armor-speed-init">
-    <div class="armor">
-      <span class="armor-body">Armor:
-        <span><input placeholder="0" type="number" name="armorcclass"></span>
-      </span>    
-    </div>
-    <div class="speed">
-      <span class="speed-body">Speed: <span><input placeholder="0" type="number" name="speed"></span>
-      </span>
-    </div>
-    <div class="initiative">
-        <span class="initiative-body">Initiative: <span><input placeholder="0" type="number" name="initiative"></span>
-        </span>
-    </div>
-  </section>
+            <label for="skillHistory-input">History:</label>
+            <input
+              placeholder="History"
+              type="text"
+              name="skillHistory"
+              id="skillHistory-input"
+            />
 
-<section class="skillchecks">
-  <label for="skillAcrobatics-input">Acrobatics:</label>
-  <input placeholder="Acrobatics" type="text" name="skillAcrobatics" id="skillAcrobatics-input">
+            <label for="skillInsight-input">Insight:</label>
+            <input
+              placeholder="Insight"
+              type="text"
+              name="skillInsight"
+              id="skillInsight-input"
+            />
 
-  
-  <label for="skillAnimalHandling-input">Animal Handling:</label>
-  <input placeholder="Animal Handling" type="text" name="skillAnimalHandling" id="skillAnimalHandling-input">
+            <label for="skillIntimidation-input">Intimidation:</label>
+            <input
+              placeholder="Intimidation"
+              type="text"
+              name="skillIntimidation"
+              id="skillIntimidation-input"
+            />
 
-  
-  <label for="skillArcana-input">Arcana:</label>
-  <input placeholder="Arcana" type="text" name="skillArcana" id="skillArcana-input">
+            <label for="skillInvestigation-input">Investigation:</label>
+            <input
+              placeholder="Investigation"
+              type="text"
+              name="skillInvestigation"
+              id="skillInvestigation-input"
+            />
 
-  
-  <label for="skillAthletics-input">Athletics:</label>
-  <input placeholder="Athletics" type="text" name="skillAthletics" id="skillAthletics-input">
+            <label for="skillMedicine-input">Medicine:</label>
+            <input
+              placeholder="Medicine"
+              type="text"
+              name="skillMedicine"
+              id="skillMedicine-input"
+            />
 
-  
-  <label for="skillDeception-input">Deception:</label>
-  <input placeholder="Deception" type="text" name="skillDeception" id="skillDeception-input">
+            <label for="skillNature-input">Nature:</label>
+            <input
+              placeholder="Nature"
+              type="text"
+              name="skillNature"
+              id="skillNature-input"
+            />
 
-  
-  <label for="skillHistory-input">History:</label>
-  <input placeholder="History" type="text" name="skillHistory" id="skillHistory-input">
+            <label for="skillPerception-input">Perception:</label>
+            <input
+              placeholder="Perception"
+              type="text"
+              name="skillPerception"
+              id="skillPerception-input"
+            />
 
-  
-  <label for="skillInsight-input">Insight:</label>
-  <input placeholder="Insight" type="text" name="skillInsight" id="skillInsight-input">
+            <label for="skillPerformance-input">Performance:</label>
+            <input
+              placeholder="Performance"
+              type="text"
+              name="skillPerformance"
+              id="skillPerformance-input"
+            />
 
-  
-  <label for="skillIntimidation-input">Intimidation:</label>
-  <input placeholder="Intimidation" type="text" name="skillIntimidation" id="skillIntimidation-input">
+            <label for="skillPersuasion-input">Persuasion:</label>
+            <input
+              placeholder="Persuasion"
+              type="text"
+              name="skillPersuasion"
+              id="skillPersuasion-input"
+            />
 
-  
-  <label for="skillInvestigation-input">Investigation:</label>
-  <input placeholder="Investigation" type="text" name="skillInvestigation" id="skillInvestigation-input">
+            <label for="skillReligion-input">Religion:</label>
+            <input
+              placeholder="Religion"
+              type="text"
+              name="skillReligion"
+              id="skillReligion-input"
+            />
 
-  
-  <label for="skillMedicine-input">Medicine:</label>
-  <input placeholder="Medicine" type="text" name="skillMedicine" id="skillMedicine-input">
+            <label for="skillSlightofHand-input">Slight of Hand:</label>
+            <input
+              placeholder="Slight of Hand"
+              type="text"
+              name="skillSlightofHand"
+              id="skillSlightofHand-input"
+            />
 
-  
-  <label for="skillNature-input">Nature:</label>
-  <input placeholder="Nature" type="text" name="skillNature" id="skillNature-input">
+            <label for="skillStealth-input">Stealth:</label>
+            <input
+              placeholder="Stealth"
+              type="text"
+              name="skillStealth"
+              id="skillStealth-input"
+            />
 
-  
-  <label for="skillPerception-input">Perception:</label>
-  <input placeholder="Perception" type="text" name="skillPerception" id="skillPerception-input">
+            <label for="skillSurvival-input">Survival:</label>
+            <input
+              placeholder="Survival"
+              type="text"
+              name="skillSurvival"
+              id="skillSurvival-input"
+            />
+          </section>
+        </section>
 
-  
-  <label for="skillPerformance-input">Performance:</label>
-  <input placeholder="Performance" type="text" name="skillPerformance" id="skillPerformance-input">
+        <section class="appearance-info">
+          <section class="appearance-body">
+            <div class="appearance-content">
+              <span id="Personality"> Personality: </span>
+              <textarea
+                name="personality"
+                id="appearance-input"
+                cols="30"
+                rows="10"
+              >
+tell me about yourself....
+      </textarea
+              >
+            </div>
+            <div class="appearance-content">
+              <span id="Appearance"> Appearance: </span>
+              <textarea
+                name="appearance"
+                id="personality-input"
+                cols="30"
+                rows="10"
+              >
+what do you look like?....
+      </textarea
+              >
+            </div>
+          </section>
+        </section>
+      </div>
+    </section>
 
-  
-  <label for="skillPersuasion-input">Persuasion:</label>
-  <input placeholder="Persuasion" type="text" name="skillPersuasion" id="skillPersuasion-input">
-
-  
-  <label for="skillReligion-input">Religion:</label>
-  <input placeholder="Religion" type="text" name="skillReligion" id="skillReligion-input">
-
-  
-  <label for="skillSlightofHand-input">Slight of Hand:</label>
-  <input placeholder="Slight of Hand" type="text" name="skillSlightofHand" id="skillSlightofHand-input">
-  
-  <label for="skillStealth-input">Stealth:</label>
-  <input placeholder="Stealth" type="text" name="skillStealth" id="skillStealth-input">
-  
-  
-  <label for="skillSurvival-input">Survival:</label>
-  <input placeholder="Survival" type="text" name="skillSurvival" id="skillSurvival-input">
-
-</section>
-
-
-
-</section>
-
-<section class="appearance-info">
-  <section class="appearance-body">
-    <div class="appearance-content">
-      <span id="Personality">
-        Personality:
-      </span>
-      <textarea name="personality" id="appearance-input" cols="30" rows="10">tell me about yourself....
-      </textarea>
-    </div>
-    <div class="appearance-content">
-      <span id="Appearance">
-        Appearance:
-      </span>
-      <textarea name="appearance" id="personality-input" cols="30" rows="10">what do you look like?....
-      </textarea>
-    </div>
-  </section>
-</section>
-
-  </div>
-</section>
-
-  <button type="submit">Create</button>
-</form>
-
-
-
+    <button type="submit">Create</button>
+  </form>
 </main>
 <%- include('../partials/footer') %>

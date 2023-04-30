@@ -39,6 +39,13 @@ Login, Create a Character, Browse!!!
 * HTML
 * CSS
 * JavaScript
+* NodeJs
+* MongoDB
+* Trello 
+* Whimsical
+* Google OAuth
+* Express
+* Mongoose
 
 ## Future Plans:
  * Query Search 

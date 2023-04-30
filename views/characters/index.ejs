@@ -1,23 +1,18 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="../stylesheets/characters/index.css">
+<link rel="stylesheet" href="../stylesheets/characters/index.css" />
 <%- include('../partials/nav') %>
 <main>
-
-
-  <h1> All Characters </h1>
-    <table>
-      <tbody>
-        <% characters.forEach((character) => {%>
-          <td>
-            <a href="/characters/<%= character._id %>" >
-              <div class="characterbutton"><%= character.name %></div>
-            </a>
-          </td>
-        <% }) %>
-        
-      </tbody>
-    </table>
-
-
+  <h1>All Characters</h1>
+  <table>
+    <tbody>
+      <% characters.forEach((character) => {%>
+      <td>
+        <a href="/characters/<%= character._id %>">
+          <div class="characterbutton"><%= character.name %></div>
+        </a>
+      </td>
+      <% }) %>
+    </tbody>
+  </table>
 </main>
 <%- include('../partials/footer') %>

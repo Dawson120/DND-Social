@@ -1,26 +1,26 @@
 <%- include('./partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/characters/home.css">
+<link rel="stylesheet" href="/stylesheets/characters/home.css" />
 <%- include('./partials/nav') %>
 
 <main>
-<div class="home-content">
-  <h1 class="welcome-text">Hello <%= user ? user.profile.name : "" %>!</h1>
-  <% if (user?.profile.avatar) { %>
+  <div class="home-content">
+    <h1 class="welcome-text">Hello <%= user ? user.profile.name : "" %>!</h1>
+    <% if (user?.profile.avatar) { %>
     <div>
       <img
-      src="<%= user.profile.avatar %>"
-      alt="<%= user.profile.name %> avatar"
+        src="<%= user.profile.avatar %>"
+        alt="<%= user.profile.name %> avatar"
       />
     </div>
     <% } %>
-  <h1 class="welcome-body">
-    Welcome to an Online DND Character Sheet Social Platform!
-  </h1>
-  <h1 class="welcome-body2">
-    Here you will be able to view character sheets other users have made and
-    even make your own!
-  </h1>
-</div>
+    <h1 class="welcome-body">
+      Welcome to an Online DND Character Sheet Social Platform!
+    </h1>
+    <h1 class="welcome-body2">
+      Here you will be able to view character sheets other users have made and
+      even make your own!
+    </h1>
+  </div>
 </main>
 
 <%- include('./partials/footer') %>

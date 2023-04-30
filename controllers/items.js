@@ -1,10 +1,6 @@
 import { Item } from "../models/item.js"
 import { Character } from "../models/character.js"
 
-function newItem(req, res) {
-  console.log("help me god")
-}
-
 function createItem(req, res) {
 req.body.owner = req.user.profile._id
 Character.findById(req.params.characterId)
@@ -56,6 +52,5 @@ function removeItem(req, res) {
 
 export {
   createItem,
-  newItem,
   removeItem,
 }

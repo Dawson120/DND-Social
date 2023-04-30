@@ -16,7 +16,7 @@ router.get('/:characterId', characterCtrl.show)
 
 router.post('/', isLoggedIn,characterCtrl.create)
 
-router.delete('/:characterId', isLoggedIn, characterCtrl.kill)
+router.delete('/:characterId', isLoggedIn, characterCtrl.removeCharacter)
 
 router.put('/:characterId', isLoggedIn, characterCtrl.update)
 

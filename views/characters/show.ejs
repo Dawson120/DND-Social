@@ -1,203 +1,218 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="../stylesheets/characters/show.css">
+<link rel="stylesheet" href="../stylesheets/characters/show.css" />
 <%- include('../partials/nav') %>
 <main>
-<section class="character-sheet">
-
+  <section class="character-sheet">
     <section class="general-info">
-
-      <h1 id="name">
-        <%= character.name %>
-      </h1>
+      <h1 id="name"><%= character.name %></h1>
       <section class="info-container">
-        <div >
+        <div>
           <span class="info">
-            <span id="info">
-              Level: <%= character.level %>
-            </span>
+            <span id="info"> Level: <%= character.level %> </span>
           </span>
         </div>
-        <div >
+        <div>
           <span class="info">
-            <span id="info">
-              Race: <%= character.race%>
-            </span>
+            <span id="info"> Race: <%= character.race%> </span>
           </span>
         </div>
-        <div >
+        <div>
           <span class="info">
-            <span id="info">
-              Age: <%= character.age %>
-            </span>
+            <span id="info"> Age: <%= character.age %> </span>
           </span>
         </div>
-        <div >
+        <div>
           <span class="info">
-            <span id="info">
-              H: <%= character.height %>
-            </span>
+            <span id="info"> H: <%= character.height %> </span>
           </span>
         </div>
-        <div >
-            <span class="info">
-              <span id="info">
-                W: <%= character.weight %>
-              </span>
-            </span>
-          
+        <div>
+          <span class="info">
+            <span id="info"> W: <%= character.weight %> </span>
+          </span>
         </div>
-        
-
-
-
+      </section>
     </section>
+
+    <div class="bottom-sheet">
+      <section class="skills-info">
+        <h1 class="info">Skills</h1>
+        <div class="skills-container">
+          <span class="skill-name">Strength</span>
+          <span class="skill-input"><%= character.str %></span>
+          <span id="strMod-input" class="skill-mod"
+            ><%= character.strMod %></span
+          >
+        </div>
+        <div class="skills-container">
+          <span class="skill-name">Dexterity</span>
+          <span class="skill-input"><%= character.dex %></span>
+          <span id="dexMod-input" class="skill-mod"
+            ><%= character.dexMod %></span
+          >
+        </div>
+        <div class="skills-container">
+          <span class="skill-name">Constitution</span>
+          <span class="skill-input"><%= character.con %></span>
+          <span id="strMod-input" class="skill-mod"
+            ><%= character.conMod %></span
+          >
+        </div>
+        <div class="skills-container">
+          <span class="skill-name">Intelligence</span>
+          <span class="skill-input"><%= character.intel %></span>
+          <span id="intelMod-input" class="skill-mod"
+            ><%= character.intelMod %></span
+          >
+        </div>
+        <div class="skills-container">
+          <span class="skill-name">Wisdom</span>
+          <span class="skill-input"><%= character.wis %></span>
+          <span id="wisMod-input" class="skill-mod"
+            ><%= character.wisMod %></span
+          >
+        </div>
+        <div class="skills-container">
+          <span class="skill-name">Charisma</span>
+          <span class="skill-input"><%= character.char %></span>
+          <span id="char-input" class="skill-mod"
+            ><%= character.charMod %></span
+          >
+        </div>
+      </section>
+
+      <section class="combat-info">
+        <section class="armor-speed-init">
+          <div class="armor">
+            <span class="armor-body"
+              >Armor:
+              <span><%= character.armorclass %></span>
+            </span>
+          </div>
+          <div class="speed">
+            <span class="speed-body"
+              >Speed: <span><%= character.speed %></span>
+            </span>
+          </div>
+          <div class="initiative">
+            <span class="initiative-body"
+              >Initiative: <span><%= character.initiative %></span>
+            </span>
+          </div>
+        </section>
+
+        <ul>
+          <li>
+            <strong>Acrobatics:</strong> <%= character.skillAcrobatics %> (Dex)
+          </li>
+          <li>
+            <strong>Animal Handling:</strong> <%= character.skillAnimalHandling
+            %> (Wis)
+          </li>
+          <li><strong>Arcana:</strong> <%= character.skillArcana %> (Int)</li>
+          <li>
+            <strong>Athletics:</strong> <%= character.skillAthletics %> (Str)
+          </li>
+          <li>
+            <strong>Deception:</strong> <%= character.skillDeception %> (Cha)
+          </li>
+          <li><strong>History:</strong> <%= character.skillHistory %> (Int)</li>
+          <li><strong>Insight:</strong> <%= character.skillInsight %> (Int)</li>
+          <li>
+            <strong>Intimidation:</strong> <%= character.skillIntimidation %>
+            (Cha)
+          </li>
+          <li>
+            <strong>Investigation:</strong> <%= character.skillInvestigation %>
+            (Int)
+          </li>
+          <li>
+            <strong>Medicine:</strong> <%= character.skillMedicine %> (Wis)
+          </li>
+          <li><strong>Nature:</strong> <%= character.skillNature %> (Int)</li>
+          <li>
+            <strong>Perception:</strong> <%= character.skillPerception %> (Int)
+          </li>
+          <li>
+            <strong>Performance:</strong> <%= character.skillPerformance %>
+            (Cha)
+          </li>
+          <li>
+            <strong>Persuasion:</strong> <%= character.skillPersuasion %> (Cha)
+          </li>
+          <li>
+            <strong>Religion:</strong> <%= character.skillReligion %> (Int)
+          </li>
+          <li>
+            <strong>Slight of Hand:</strong> <%= character.skillSlightofHand %>
+            (Dex)
+          </li>
+          <li><strong>Stealth:</strong> <%= character.skillStealth %> (Dex)</li>
+          <li>
+            <strong>Survival:</strong> <%= character.skillSurvival %> (Wis)
+          </li>
+        </ul>
+      </section>
+
+      <section class="appearance-info">
+        <section class="appearance-body">
+          <div class="appearance-content">
+            <span id="Personality">
+              Personality: <%= character.personality %>
+            </span>
+          </div>
+          <div class="appearance-content">
+            <span id="Appearance">
+              Appearance: <%= character.appearance %>
+            </span>
+          </div>
+        </section>
+      </section>
+    </div>
   </section>
-
-
-<div class="bottom-sheet">
-  <section class="skills-info">
-    <h1 class="info">Skills</h1>
-    <div class="skills-container">
-      <span class="skill-name">Strength</span>
-      <span class="skill-input"><%= character.str %></span>
-      <span id="strMod-input" class="skill-mod"><%= character.strMod %></span>
-    </div>
-    <div class="skills-container">
-      <span class="skill-name">Dexterity</span>
-      <span class="skill-input"><%= character.dex %></span>
-      <span id="dexMod-input" class="skill-mod"><%= character.dexMod %></span>
-    </div>
-    <div class="skills-container">
-      <span class="skill-name">Constitution</span>
-      <span class="skill-input"><%= character.con %></span>
-      <span id="strMod-input" class="skill-mod"><%= character.conMod %></span>
-    </div>
-    <div class="skills-container">
-      <span class="skill-name">Intelligence</span>
-      <span class="skill-input"><%= character.intel %></span>
-      <span id="intelMod-input" class="skill-mod"><%= character.intelMod %></span>
-    </div>
-    <div class="skills-container">
-      <span class="skill-name">Wisdom</span>
-      <span class="skill-input"><%= character.wis %></span>
-      <span id="wisMod-input" class="skill-mod"><%= character.wisMod %></span>
-    </div>
-    <div class="skills-container">
-      <span class="skill-name">Charisma</span>
-      <span class="skill-input"><%= character.char %></span>
-      <span id="char-input" class="skill-mod"><%= character.charMod %></span>
-    </div>
-
-
-
-
-  </section>
-
-
-
 
   
-<section class="combat-info">
-
-  
-  <section class="armor-speed-init">
-    <div class="armor">
-      <span class="armor-body">Armor:
-        <span><%= character.armorclass %></span>
-      </span>    
-    </div>
-    <div class="speed">
-      <span class="speed-body">Speed: <span><%= character.speed %></span>
-      </span>
-    </div>
-    <div class="initiative">
-        <span class="initiative-body">Initiative: <span><%= character.initiative %></span>
-        </span>
-    </div>
-  </section>
-
-  <ul>
-    <li><strong>Acrobatics:</strong> <%= character.skillAcrobatics %> (Dex)</li>
-    <li><strong>Animal Handling:</strong> <%= character.skillAnimalHandling %> (Wis)</li>
-    <li><strong>Arcana:</strong> <%= character.skillArcana %> (Int)</li>
-    <li><strong>Athletics:</strong> <%= character.skillAthletics %> (Str)</li>
-    <li><strong>Deception:</strong> <%= character.skillDeception %> (Cha)</li>
-    <li><strong>History:</strong> <%= character.skillHistory %> (Int)</li>
-    <li><strong>Insight:</strong> <%= character.skillInsight %> (Int)</li>
-    <li><strong>Intimidation:</strong> <%= character.skillIntimidation %> (Cha)</li>
-    <li><strong>Investigation:</strong> <%= character.skillInvestigation %> (Int)</li>
-    <li><strong>Medicine:</strong> <%= character.skillMedicine %> (Wis)</li>
-    <li><strong>Nature:</strong> <%= character.skillNature %> (Int)</li>
-    <li><strong>Perception:</strong> <%= character.skillPerception %> (Int)</li>
-    <li><strong>Performance:</strong> <%= character.skillPerformance %> (Cha)</li>
-    <li><strong>Persuasion:</strong> <%= character.skillPersuasion %> (Cha)</li>
-    <li><strong>Religion:</strong> <%= character.skillReligion %> (Int)</li>
-    <li><strong>Slight of Hand:</strong> <%= character.skillSlightofHand %> (Dex)</li>
-    <li><strong>Stealth:</strong> <%= character.skillStealth %> (Dex)</li>
-    <li><strong>Survival:</strong> <%= character.skillSurvival %> (Wis)</li>
-  </ul>
-</section>
-
-
-<section class="appearance-info">
-  <section class="appearance-body">
-    <div class="appearance-content">
-      <span id="Personality">
-        Personality: <%= character.personality %>
-      </span>
-    </div>
-    <div class="appearance-content">
-      <span id="Appearance">
-        Appearance: <%= character.appearance %>
-      </span>
-    </div>
-  </section>
-</section>
-
-
-
-</div>
-</section>
-  
-
-
-
-
-  <h1>DM Notes</h1>
-  <section>
+  <section class="notes-section">
+    <h1>DM Notes</h1>
     <ul>
       <% character.notes.forEach(notes => {%>
-        <li>
-          <%= notes.note %><%= notes.created %>
-          <% if (character.owner.equals(user?.profile._id)) { %> 
-            <form action="/characters/<%= character._id %>/notes/<%= notes._id %>?_method=DELETE" method="POST"><button type="submit">X</button>
-            </form>
-          <% }  %>
-        </li>
+      <li>
+        <%= notes.note %><%= notes.created %> <% if
+        (character.owner.equals(user?.profile._id)) { %>
+        <form
+          action="/characters/<%= character._id %>/notes/<%= notes._id %>?_method=DELETE"
+          method="POST"
+        >
+          <button type="submit">X</button>
+        </form>
+        <% } %>
+      </li>
       <% }) %>
-    </ul>
+    </ul>    
+    <% if (character.owner.equals(user?.profile._id)) { %>
+    <form action="/characters/<%= character._id %>/notes" method="POST">
+      <input type="text" name="notes" placeholder="DM Notes Here" />
+      <button type="submit" class="bottombuttons">Add Note</button>
+    </form>
+    <% } %>
   </section>
-      
-      <section>
-        <% if (character.owner.equals(user?.profile._id)) { %> 
-          <form action="/characters/<%= character._id %>/notes" method="POST">
-            <input type="text" name="notes" placeholder="DM Notes Here">
-            <button type="submit">Add Note</button>
-          </form>
-          <% }  %>
-        </section>
-        
-        <section>
-          <% if (character.owner.equals(user?.profile._id)) { %> 
-            <form action="/characters/<%= character._id %>?_method=DELETE" method="POST">
-              <button type="submit">KILL</button>
-            </form>
-            <a href="/characters/<%= character._id %>/edit"><button>Edit</button></a>
-            <% } %>
-          </section>
-          
-          <a href="/characters/<%= character._id %>/inventory"><button>Inventory</button></a>
-          
+
+  <section class="bottomoptions">
+
+    <% if (character.owner.equals(user?.profile._id)) { %>
+    <a href="/characters/<%= character._id %>/edit" class="bottombuttons">Edit</a>
+    <% } %>
+    <a href="/characters/<%= character._id %>/inventory"
+      class="bottombuttons">Inventory</a>    
+    <% if (character.owner.equals(user?.profile._id)) { %>
+    <form action="/characters/<%= character._id %>?_method=DELETE"
+      method="POST">
+      <button type="submit" class="bottombuttons">Delete</button>
+    </form>
+    <% } %>
+  </section>
+
+
 </main>
-          
-          <%- include('../partials/footer') %>
+
+<%- include('../partials/footer') %>
