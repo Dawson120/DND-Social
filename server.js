@@ -22,7 +22,6 @@ import'./config/passport.js'
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as characterRouter} from './routes/characters.js'
-
 import{ router as itemRouter } from './routes/items.js'
 
 // create the express app
@@ -35,7 +34,6 @@ app.set('view engine', 'ejs')
 app.use(methodOverride('_method'))
 app.use(logger('dev'))
 app.use(express.json())
-app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(
   express.static(
