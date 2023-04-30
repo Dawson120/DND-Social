@@ -22,7 +22,7 @@ Login, Create a Character, Browse!!!
 * Google Account
 
 ### 🐉 [LINK](https://dnd-social.fly.dev/) 🐉
-### 🖥 [TRELLO](https://dnd-social.fly.dev/) 🖥
+### 🖥 [TRELLO](https://trello.com/invite/b/p5Jc1X33/ATTIfcd155b5d6ff0e9e85de6fe1c06efcc774AA5D24/dnd-character-sheet-social-platform) 🖥
 
 
 ### How To Use
