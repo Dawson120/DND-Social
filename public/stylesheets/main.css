@@ -76,3 +76,30 @@ nav :hover{
 .right {
   margin-left: auto;
 }
+
+.inventorybutton {
+  color: var(--dl-color-gray-black);
+  border: none;
+  margin: 5px;
+  padding: 5px;
+  box-shadow: 5px 5px 10px 0px #000000;
+  font-style: italic;
+  font-size: 16px;
+  font-family: Open Sans;
+  font-weight: 800;
+  line-height: 1.15;
+  border-color: var(--dl-color-gray-black);
+  border-width: 5px;
+  border-top: 5px;
+  border-radius: var(--dl-radius-radius-radius8);
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.inventoryform :hover {
+  background-color: black;
+  border-color: white;
+  color: white;
+}

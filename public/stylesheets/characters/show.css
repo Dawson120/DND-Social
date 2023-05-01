@@ -256,11 +256,3 @@ main {
   flex-direction: row;
   justify-content: space-evenly;
 }
-
-form {
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: fit-content;
-  max-height: auto; */
-}
